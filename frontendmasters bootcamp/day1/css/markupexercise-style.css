@@ -1,0 +1,26 @@
+body {
+    background-color: #367DD9;
+}
+article {
+   width: 70%;
+   margin: 0 auto; 
+}
+
+.yellow {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #F2B705;
+}
+img.floatright {
+    border: 3px solid #736002;
+    float: right;
+}
+#however {
+    border: 4px dotted #403501;
+    background-color: #F2E205;
+}
+blockquote {
+    width: 80%;
+    margin: 0 auto;
+    border-left: 3px solid  #F2B705;
+    padding-left: 1rem;
+}
