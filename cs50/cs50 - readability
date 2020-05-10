@@ -1,0 +1,82 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+//declaring the letter counting function
+int count_letters(string text);
+//declaring the word counting function
+int count_words(string text);
+//declaring the sentence counting function
+int count_sentences(string text);
+
+//defining the main function
+int main(void)
+{
+    string text = get_string("Text: ");
+    printf("%i letter(s)\n", count_letters(text));
+    printf("%i word(s)\n", count_words(text));
+    printf("%i sentence(s)\n", count_sentences(text));
+}
+
+//definig the letter counting function
+int count_letters(string text)
+{
+    //declare the vairable for the number of letters and assign its value to 0
+    int count = 0;
+    //loop that iterates through the text inputed by user and counts letters
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        //the condition is that we count only letters and not spaces or other characters
+        //and we use tolower to make all the letters lowercase
+        if (tolower(text[i]) >= 'a' && tolower(text[i]) <= 'z')
+        {
+            count++;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    return count;
+}
+
+//defining the word counting function
+int count_words(string text)
+{
+    //declare the variable for the number of words and assign its value to zero
+    int count = 0;
+    //loop that iterates through the text inputed by a user and counts words
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        if (text[i] == ' ')
+        {
+            count++;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    return count + 1;
+}
+
+//defining the sentence counting function
+int count_sentences(string text)
+{
+    //declare the variable for the number of sentances and assign its value to 0
+    int count = 0;
+    //loop that iterates through the text inputed by a user and counts sentences
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+        {
+            count++;
+        }
+        else
+        {
+            continue;
+        }
+    }
+    return count;
+}
